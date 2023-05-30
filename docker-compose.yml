@@ -1,0 +1,19 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+  # frontend:
+  #   build: ./school-admin-frontend
+  #   ports:
+  #     - 3000:3000
+  database:
+    build: ./database
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=myappdb
