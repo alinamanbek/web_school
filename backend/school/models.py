@@ -22,3 +22,8 @@ class Student(models.Model):
     address = models.CharField(max_length=100)
     email = models.EmailField()
     password = models.CharField(max_length=100)
+
+
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+    hour = models.IntegerField()
